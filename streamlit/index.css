@@ -1,0 +1,35 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 5px 5px;
+}
+
+.header {
+  color: blue;
+  text-align: center;
+  padding: 10px;
+  background-color: aqua;
+}
+
+.content {
+  padding: 20px;
+  text-align: justify;
+}
+
+.footer {
+  background-color: #00ff4c;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+button {
+  border: None;
+  border-radius: 10px;
+  background-color: #00ff4c;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00330f;
+}
