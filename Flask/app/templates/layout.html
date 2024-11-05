@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Pré-Formulação {% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/layout.css') }}"
+    />
+    {% block styles %}{% endblock %}
+  </head>
+  <body>
+    <header>
+      <div id="navbar">
+        <a class="nav-brand" href="{{ url_for('home') }}">Pré Formulação</a>
+
+        <nav>
+          <ul class="nav-list">
+            <li><a class="nav-item" href="#">Início</a></li>
+            <li><a class="nav-item" href="#">Registro</a></li>
+            <li><a class="nav-item" href="#">Agenda</a></li>
+            <li><a class="nav-item" href="#">Resultados</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="">{% block content %} {% endblock %}</div>
+    </main>
+
+    <footer id="footer">
+      <p>Mentoria IA</p>
+    </footer>
+  </body>
+</html>
