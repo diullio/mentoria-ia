@@ -32,5 +32,25 @@
     <footer id="footer">
       <p>Mentoria IA</p>
     </footer>
+
+    {% if form.errors %}
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        let errorMessages = "";
+
+        {% for field, errors in form.errors.items() %}
+          errorMessages += "{{ field|capitalize }}: ";
+          {% for error in errors %}
+            errorMessages += "{{ error }}\n";
+          {% endfor %}
+          errorMessages += "\n";
+        {% endfor %}
+
+        if (errorMessages) {
+          alert(errorMessages);  // Exibe todos os erros em um popup de alerta
+        }
+      });
+    </script>
+    {% endif %}
   </body>
 </html>

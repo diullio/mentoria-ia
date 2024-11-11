@@ -7,7 +7,23 @@
 {% endblock %} {% block content %}
 
 <div class="content">
-  <p>Texto Teste</p>
+  <form action="" method="POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+
+    <div>
+      <label for="nome">Nome:</label> {{ form.nome(class='label',
+      placeholder='Nome') }}
+    </div>
+    <div>
+      {{ form.email(class='label', placeholder='diullio@hotmail.com') }}
+    </div>
+    <div>{{ form.password(class='label', placeholder='Senha') }}</div>
+    <div>
+      {{ form.confirm_password(class='label', placeholder='Confirme sua Senha')
+      }}
+    </div>
+    <button type="submit">Enviar</button>
+  </form>
 </div>
 
 {% endblock %}
