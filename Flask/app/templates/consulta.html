@@ -1,0 +1,54 @@
+{% extends 'layout.html' %} {% block title %} Consulta {% endblock %}
+{%block styles %}
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
+        margin: 0; /* Remove a margem padrão */
+    }
+    main {
+        flex: 1; /* Faz com que o conteúdo principal ocupe o espaço restante */
+    }
+    
+    table {
+        margin-top: 20px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #000000;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #8b8b8b;
+        text-align: center;
+    }
+
+</style>
+{% endblock %} {% block content %}
+<body>
+    <div class="table-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>{{usuario.id}}</td>
+                    <td>{{usuario.username}}</td>
+                    <td>{{usuario.email}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+{% endblock %}

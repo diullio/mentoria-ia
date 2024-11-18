@@ -18,9 +18,9 @@
         <nav>
           <ul class="nav-list">
             <li><a class="nav-item" href="#">Início</a></li>
-            <li><a class="nav-item" href="#">Registro</a></li>
+            <li><a class="nav-item" href="{{ url_for('home') }}">Registro</a></li>
+            <li><a class="nav-item" href="{{ url_for('consulta') }}">Resultados</a></li>
             <li><a class="nav-item" href="#">Agenda</a></li>
-            <li><a class="nav-item" href="#">Resultados</a></li>
           </ul>
         </nav>
       </div>
@@ -52,5 +52,14 @@
       });
     </script>
     {% endif %}
+
+    <script>
+      // Variável passada do backend
+      const mensagem = "{{ mensagem|safe }}";  // "safe" para evitar escapamento de HTML
+  
+      if (mensagem) {
+        alert(mensagem); // Exibe o alerta com a mensagem do backend
+      }
+    </script>
   </body>
 </html>

@@ -7,8 +7,7 @@ from flask_wtf.file import FileAllowed, FileRequired
 class FormsTeste(FlaskForm):
     nome = StringField('Nome', validators=[DataRequired()])
     email = StringField('email', validators=[DataRequired(), Email()])
-    password = PasswordField('password', validators=[DataRequired(),
-                                                     Length(min=8, message='A senha deve conter pelo menos 8 caracteres'), Regexp('^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$', message='A senha deve conter pelo menos uma letra maiúscula, um número e um caractere especial.')])
+    password = PasswordField('password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirme sua senha', validators=[DataRequired(), EqualTo('password', message='As senhas devem ser iguais')])
 
 
